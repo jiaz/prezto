@@ -44,5 +44,6 @@ alias ec="emacsclient -nw"
 alias er="emacsclient -e '(kill-emacs)' > /dev/null 2>&1; launchctl unload ~/Library/LaunchAgents/gnu.emacs.daemon.plist; launchctl load ~/Library/LaunchAgents/gnu.emacs.daemon.plist"
 alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
 alias vi="vim"
+alias em="emacs -q -l ~/.emacs.d.clean/init.el"
 
 [ -e ~/.zshrc.local ] && source ~/.zshrc.local

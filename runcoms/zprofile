@@ -37,6 +37,20 @@ export LC_ALL=en_US.UTF-8
 
 export PATH="$HOME/bin:$PATH"
 
+# Ensure path arrays do not contain duplicates.
+typeset -gU cdpath fpath mailpath path
+
+# Set the the list of directories that cd searches.
+# cdpath=(
+#   $cdpath
+# )
+
+# Set the list of directories that Zsh searches for programs.
+path=(
+  /usr/local/{bin,sbin}
+  $path
+)
+
 ############
 # Java Env #
 ############
@@ -90,6 +104,7 @@ syspip(){
 }
 # If in the future we want to upgrade our global packages, the above function enables us to do so via:
 # syspip install --upgrade pip setuptools virtualenv
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
 ############
 # Node Env #
@@ -100,20 +115,6 @@ syspip(){
 
 # nvm use 0.10
 if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
-
-# Ensure path arrays do not contain duplicates.
-typeset -gU cdpath fpath mailpath path
-
-# Set the the list of directories that cd searches.
-# cdpath=(
-#   $cdpath
-# )
-
-# Set the list of directories that Zsh searches for programs.
-path=(
-  /usr/local/{bin,sbin}
-  $path
-)
 
 #
 # Less
