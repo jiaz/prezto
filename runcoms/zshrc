@@ -29,6 +29,16 @@ watch_host() {
     watch_ip $ip
 }
 
+pg() {
+    ps -ef | grep "$1" | grep -v 'grep' | grep "$1"
+}
+
+PATH="/Users/jiajzhou/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/Users/jiajzhou/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/Users/jiajzhou/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/Users/jiajzhou/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/jiajzhou/perl5"; export PERL_MM_OPT;
+
 alias ws="cd ~/Workspace"
 alias dl="cd ~/Downloads"
 alias l="ls -lha"
@@ -46,4 +56,13 @@ alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
 alias vi="vim"
 alias em="emacs -q -l ~/.emacs.d.clean/init.el"
 
+export HOMEBREW_GITHUB_API_TOKEN="0d0e4b6cdb5fa8e502cd97d9fdb63728f689b091"
+export BYOBU_PREFIX=$(brew --prefix)
+
 [ -e ~/.zshrc.local ] && source ~/.zshrc.local
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+setopt clobber
+export SDKMAN_DIR="/Users/jiajzhou/.sdkman"
+[[ -s "/Users/jiajzhou/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/jiajzhou/.sdkman/bin/sdkman-init.sh"
+setopt noclobber
