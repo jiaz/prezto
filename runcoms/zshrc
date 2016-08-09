@@ -56,7 +56,7 @@ alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
 alias vi="vim"
 alias em="emacs -q -l ~/.emacs.d.clean/init.el"
 
-export HOMEBREW_GITHUB_API_TOKEN="0d0e4b6cdb5fa8e502cd97d9fdb63728f689b091"
+export HOMEBREW_GITHUB_API_TOKEN="cf20dbcae8191b41a3edb85dad3fa900228fb5bf"
 export BYOBU_PREFIX=$(brew --prefix)
 
 [ -e ~/.zshrc.local ] && source ~/.zshrc.local
