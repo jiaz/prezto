@@ -62,7 +62,7 @@ export BYOBU_PREFIX=$(brew --prefix)
 [ -e ~/.zshrc.local ] && source ~/.zshrc.local
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-#setopt clobber
-#export SDKMAN_DIR="/Users/jiajzhou/.sdkman"
-#[[ -s "/Users/jiajzhou/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/jiajzhou/.sdkman/bin/sdkman-init.sh"
-#setopt noclobber
+setopt clobber
+export SDKMAN_DIR="/Users/jiajzhou/.sdkman"
+[[ -s "/Users/jiajzhou/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/jiajzhou/.sdkman/bin/sdkman-init.sh"
+setopt noclobber
